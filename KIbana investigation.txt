@@ -1,0 +1,43 @@
+﻿1. Add the sample web log data to Kibana.
+
+2. Answer the following questions:
+
+   * In the last 7 days, how many unique visitors were located in India? 223
+   * In the last 24 hours, of the visitors from China, how many were using Mac OSX? 67
+
+   * In the last 2 days, what percentage of visitors received 404 errors? How about 503 errors? 503- 66.667   404- 33.333
+
+   * In the last 7 days, what country produced the majority of the traffic on the website?  China-20%
+
+   * Of the traffic that's coming from that country, what time of day had the highest amount of activity? 10am and 12 pm
+
+   * List all the types of downloaded files that have been identified for the last 7 days, along with a short description of each file type (use Google if you aren't sure about a particular file type).
+   * Gz -archived files compressed by gzip        1.7MB        
+   * css- used for describing presentation of file used by markup languages        1.4MB        
+   * Zip- compressed folder usssally containing multiple files        1.2MB          
+   * deb- used to update or install unix applications        1.1MB                 
+   * rpm- used to store installations packages for linux        445.7KB
+
+      3. Now that you have a feel for the data, Let's dive a bit deeper. Look at the chart that shows Unique Visitors Vs. Average Bytes.
+
+         * Locate the time frame in the last 7 days with the most amount of bytes (activity).
+         * In your own words, is there anything that seems potentially strange about this activity? At 22:55 there was a very large spike in the average byte without a jump in users
+         4. Filter the data by this event.
+
+            * What is the timestamp for this event? 22:55
+            * What kind of file was downloaded?rpm
+            * From what country did this activity originate? New York, US
+            * What HTTP response codes were encountered by this visitor? 200
+            5. Switch to the Kibana Discover page to see more details about this activity.
+
+               * What is the source IP address of this activity?35.143.166.159
+               * What are the geo coordinates of this activity? Lat- 43.338 lon- -73.611
+               * What OS was the source machine running?windows 8
+               * What is the full URL that was accessed?  download/beat/metricbeat/metricbeat-6.3.2-i686.rpm
+               * From what website did the visitor's traffic originate? artifacts.elastic.co
+               6. Finish your investigation with a short overview of your insights.
+
+                  * What do you think the user was doing? Downloading a rpm file
+                  * Was the file they downloaded malicious? If not, what is the file used for? The file was was used for a installation for a linux metricbeat application
+                  * Is there anything that seems suspicious about this activity? No, there is not anything inherently spuspicous 
+                  * Is any of the traffic you inspected potentially outside of compliance guidlines?  No
