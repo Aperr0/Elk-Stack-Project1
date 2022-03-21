@@ -3,7 +3,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
+Elk-Stack-Project1/project diagram.PNG
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -43,7 +43,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the Jumpbox provisoner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - _TODO: Add whitelisted IP addresses_
 
 Machines within the network can only be accessed by _____.
