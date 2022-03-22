@@ -1,0 +1,45 @@
+---
+- name: VM Elk Config
+  hosts: elk
+  become: True
+  tasks:
+  - ansible.posix.sysctl:
+     name: vm.max_map_count
+     reload: yes
+     state: present
+     sysctl_set: yes
+     value: 262144
+
+  - name: docker.io
+    apt:
+      update_cache: yes
+      force_apt_get: yes
+      name: docker.io
+      state: present
+
+  - name: install pip3
+    apt:
+      force_apt_get: yes
+      name: python3-pip
+      state: present
+
+  - name: Install Docker python
+    pip:
+      name: docker
+      state: present
+
+  - name: Lauch docker container
+    docker_container:
+      name: elk
+      image: sebp/elk:761
+      state: started
+      restart_policy: always
+      published_ports:
+        - 5601:5601
+        - 9200:9200
+        - 5044:5044
+
+  - name: Enable Docker
+    systemd:
+      name: docker
+      enabled: yes
